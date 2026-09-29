@@ -1,0 +1,45 @@
+<config>
+  <io>
+    <iparam key="mesh_dimension"        val="2"/>
+    <sparam key="mesh_file"             val="/gpfs/scratch/fortetenreiro/run/Vortex/msh/Vortex_8.msh"/>
+    <sparam key="mesh_format"           val="ParaGMSH"/>
+    <iparam key="prepartitioning"       val="0"/>
+    <iparam key="redistribution"        val="1"/>
+    <sparam key="output_format"         val="HDF5"/>
+    <sparam key="output_path"           val="/gpfs/scratch/fortetenreiro/run/Vortex/visu/R0_M8_P2"/>
+    <sparam key="restartPath"           val="/gpfs/scratch/fortetenreiro/run/Vortex/restart/R0_M8_P2"/>
+    <sparam key="restartPrefix"         val="restart"/>
+    <iparam key="conservativeVariables" val="3"/>
+    <sparam key="visutype"              val="cells"/>
+    <iparam key="active"                val="0"/>
+    <iparam key="scalab"                val="0"/>
+  </io>
+  <aerosol>
+    <iparam key="debug"                 val="0"/>
+    <sparam key="linearsolver"          val="PETSc"/>
+  </aerosol>
+  <discretisation>
+    <iparam key="continuous"            val="0"/>
+    <iparam key="degree"                val="2"/>
+    <sparam key="femtype"               val="Lagrange"/>
+    <sparam key="numericalflux"         val="WbswLaxFriedrichs"/>
+  </discretisation>
+  <model>
+    <sparam key="name"                  val="ShallowWater"/>
+    <iparam key="dispersion"            val="0"/>
+    <fparam key="g"                     val="1"/>
+    <fparam key="h0"                    val="1"/>
+    <sparam key="bathymetry"            val="1;0;ICBC"/>
+    <sparam key="manning"               val="1;0;ICBC;CONSTANT;0.00"/>
+  </model>
+  <testcase>
+    <sparam key="name"                  val="Vortex"/>
+  </testcase>
+  <time>
+    <sparam key="inittype"              val="interpolation"/>
+    <sparam key="name"                  val="RK-3-3"/>
+    <sparam key="type"                  val="cfl"/>
+    <fparam key="CFL"                   val="0.2097"/>
+    <fparam key="tmax"                  val="100"/>
+  </time>
+</config>

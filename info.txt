@@ -1,0 +1,2 @@
+sinfo -o "%n %e %m %a %c %C"
+squeue -u $USER -h -o "%t %C" | awk '$1=="R"{r+=$2} $1=="PD"{p+=$2} END {print "R: " r "\nP: " p "\nT: "r+p}'
